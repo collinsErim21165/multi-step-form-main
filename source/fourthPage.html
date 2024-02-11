@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./output.css">
+    <style>
+        #Left {
+          background-image: url(../assets/images/bg-sidebar-desktop.svg);
+          background-position: center;
+          background-size: cover;
+      }
+      #Mobile-view{
+          background-image: url(../assets/images/bg-sidebar-mobile.svg);
+          background-position: center;
+          background-size: cover;
+      }
+      #button{
+        width: 100px;
+        height: 30px;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 10px;
+      }
+      #p {
+        color: blue;
+      }
+      #background{
+        background-color: darkgray;
+        width: 400px;
+      }
+      @media (max-width: 768px) {
+        #background{
+        background-color: darkgray;
+        width: 300px;
+      }
+      #button-div{
+        gap: 100px;
+      }
+      }
+  </style>
+</head>
+<body>
+    <div id="main-Div" class="flex md:flex-row flex-col items-start justify-start">
+        <div id="Left" class="h-screen w-1/4 rounded-2xl hidden md:flex flex-col items-start  justify-start gap-4 pt-3 text-white">
+            <div id="step-one" class="flex flex-row items-start justify-center gap-4 pl-14 ">
+                <p class="w-9 h-9 rounded-full border border-solid border-white text-center">1</p>
+                <div class="">
+                    <p>STEP 1 </p>
+                    <p class="font-bold">YOUR INFO</p>
+                </div>
+            </div>
+            <div id="step-two" class="flex flex-row items-start justify-center gap-4 pl-14">
+                <p  class="w-9 h-9 rounded-full border border-solid border-white text-center">2</p>
+                <div class="">
+                    <p>STEP 2</p>
+                    <p class="font-bold">SELECT PLAN</p>
+                </div>
+            </div>
+            <div id="step-three" class="flex flex-row items-start justify-center gap-4 pl-14" >
+                <p class="w-9 h-9 rounded-full border border-solid border-white text-center">3</p>
+                <div class="">
+                    <p>STEP 3</p>
+                    <p class="font-bold">ADD-ONS</p>
+                </div>
+            </div>
+            <div id="step-four" class="flex flex-row items-start justify-center gap-4 pl-14">
+                <p  class="bg-teal-400 w-9 h-9 text-black text-center rounded-full font-bold ">4</p>
+                <div class="">
+                    <p>STEP 4</p>
+                    <p class="font-bold">SUMMARY</p>
+                </div>
+            </div>
+        </div>
+        <div id="Mobile-view" class="w-full relative md:absolute h-56 flex md:hidden pr-4 pl-4 flex-row items-center justify-between">
+            <p class="w-12 h-10 bg-transparent border border-white rounded-full text-center text-2xl">1</p>
+            <p class="w-12 h-10 bg-transparent border border-white rounded-full text-center text-2xl">2</p>
+            <p class="w-12 h-10 bg-transparent border border-white rounded-full text-center text-2xl">3</p>
+            <p class="w-12 h-10 bg-teal-400 text-black rounded-full text-center font-bold text-2xl">4</p>
+        </div>
+        <div id="Right" class="pl-4 pb-7 ml-3 md:ml-0 pt-5 mr-3 md:mr-0 md:pl-20 bg-white shadow-md md:shadow-none w-fit h-fit absolute md:relative mt-40 md:mt-0 flex flex-col items-start justify-start gap-7 ">
+            <div>
+                <h1 class="font-bold text-3xl"> Finishing up</h1>
+                <p class="text-gray-500"> Double-check everything looks OK before confirming.</p>
+            </div>
+            <div class="">
+                <div id="background" class="w-40 border border-solid">
+                    <div class="flex flex-row items-center justify-between  ">
+                        <div class="flex flex-col items-center justify-center">
+                            <p id="selectedButton">Arcade(monthly)</p>
+                            <a href="" class="underline">change</a>
+                        </div>
+                        <p>$9/mo</p>
+                    </div>
+                    <hr>
+                    <div class="flex flex-row items-center justify-between ">
+                        <p>Online storage</p>
+                        <p>+$1/mo</p>
+                    </div>
+                    <div class="flex flex-row items-center justify-between ">
+                        <p>Larger service</p>
+                        <p>+$2/mo</p>
+                    </div>
+                </div>
+                <div class="flex flex-row items-center justify-between">
+                    <p>Total(per month)</p>
+                    <p id="p" class="font-bold text-blue-500">+$12/mo</p>
+                </div>
+            </div>
+            <div id="button-div" class="flex flex-row items-center justify-center gap-60">
+                <a href="./thirdPage.html">Go Back</a>
+                <button id="button" class=""><a href="./successPage.html">Confirm</a></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../fourthPage.js"></script>
+</body>
+</html>

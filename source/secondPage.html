@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="../src/input.css">
+    <style>
+        #Left {
+            background-image: url(../assets/images/bg-sidebar-desktop.svg);
+            background-position: center;
+            background-size: cover;
+        }
+        #Mobile-view{
+            background-image: url(../assets/images/bg-sidebar-mobile.svg);
+            background-position: center;
+            background-size: cover;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="Main-div" class="flex flex-col md:flex-row items-start justify-start ">
+        <div id="Left" class="h-screen w-1/4 hidden text-white rounded-xl md:flex flex-col items-start justify-start gap-4 pt-3">
+            <div id="step-one" class="flex flex-row items-center justify-center gap-4 pl-14">
+                <p class="w-9 h-9 rounded-full border border-solid border-white text-center ">1</p>
+                <div>
+                    <p>STEP 1 </p>
+                    <p class="font-bold">YOUR INFO</p>
+                </div>
+            </div>
+            <div id="step-two" class="flex flex-row items-center justify-center gap-4 pl-14">
+                <p  class="bg-teal-400 w-9 h-9 text-black text-center rounded-full font-bold">2</p>
+                <div>
+                    <p>STEP 2</p>
+                    <p class="font-bold">SELECT PLAN</p>
+                </div>
+            </div>
+            <div id="step-three" class="flex flex-row items-center justify-center gap-4 pl-14" >
+                <p class="w-9 h-9 rounded-full border border-solid border-white text-center">3</p>
+                <div>
+                    <p>STEP 3</p>
+                    <p class="font-bold">ADD-ONS</p>
+                </div>
+            </div>
+            <div id="step-four" class="flex flex-row items-center justify-center gap-4 pl-14">
+                <p class="w-9 h-9 rounded-full border border-solid border-white text-center">4</p>
+                <div>
+                    <p>STEP 4</p>
+                    <p class="font-bold">SUMMARY</p>
+                </div>
+            </div>
+        </div>
+        <div id="Mobile-view" class="w-full relative md:absolute h-56 flex md:hidden pr-4 pl-4 flex-row items-center justify-between">
+            <p class="w-12 h-10 bg-transparent border border-white rounded-full text-center text-2xl">1</p>
+            <p class="w-12 h-10 bg-teal-400 text-black rounded-full text-center font-bold text-2xl">2</p>
+            <p class="w-12 h-10 bg-transparent border border-white rounded-full text-center text-2xl">3</p>
+            <p class="w-12 h-10 bg-transparent border border-white rounded-full text-center text-2xl">4</p>
+        </div>
+        <div id="Right" class="flex flex-col items-start justify-between pl-10 md:pl-20 gap-12 pt-9 h-fit w-fit bg-white rounded-2xl shadow-md md:shadow-none absolute md:relative mt-36 md:mt-0 md:pr-0 pr-16 ml-3 md:ml-0 pb-5 md:pb-0">
+            <div>
+                <h1 class="font-bold text-3xl pb-3">  Select your plan</h1>
+                <p class="text-gray-500">  You have the option of monthly or <br class="md:hidden flex"> yearly billing.</p>
+            </div>
+             <div id="Big-buttons" class="flex flex-col md:flex-row items-center justify-between gap-8 ">
+                <div onclick="pressButton()" id="buttons" class="md:h-32 h-20 md:w-32 w-60  border dorder-solid border-blue-800 bg-[#cecece] flex md:flex-col flex-row items-start justify-start pt-5 pl-2 gap-3  md:justify-between md:pl-2 md:pt-2 md:pb-2 rounded-xl hover:border-[rgb(98,89,255)] cursor-pointer">
+                    <div id="Arcade">
+                        <img src="../assets/images/icon-arcade.svg" alt="">
+                    </div>
+                    <div>
+                        <h3 class="font-bold">Arcade</h3>
+                        <p class="text-gray-500"> $9/mo</p>
+                    </div>
+                </div>
+                <div  onclick="pressButtonOne()" id="buttonOne"   class="md:h-32 h-20 md:w-32 w-60 border dorder-solid flex md:flex-col flex-row items-start justify-start md:justify-between pt-5 gap-3 pl-2 md:pt-2 md:pb-2 rounded-xl hover:border-[rgb(98,89,255)] cursor-pointer">
+                    <div id="Advanced">
+                        <img src="../assets/images/icon-advanced.svg" alt="">
+                    </div>
+                    <div>
+                        <h3 class="font-bold">Advanced</h3>
+                        <p class="text-gray-500"> $12/mo</p>
+                    </div>
+                </div>
+                <div  onclick="pressButtonTwo()" id="buttonTwo"   class="md:h-32 h-20 md:w-32 w-60 border dorder-solid flex md:flex-col flex-row items-start justify-start md:justify-between pl-2 pt-5 gap-3 md:pt-2 md:pb-2 rounded-xl hover:border-[rgb(98,89,255)] cursor-pointer">
+                    <div id="Pro">
+                         <img src="../assets/images/icon-pro.svg" alt="">
+                    </div>
+                    <div>
+                        <h3 class="font-bold">Pro</h3>
+                        <p class="text-gray-500 "> $15/mo</p>
+                    </div>
+                </div>
+             </div>
+             <div id="Toggle-switch" class="flex flex-row items-center justify-center gap-7 w-60 md:w-11/12 h-10 bg-[#cecece]">
+                <div id="monthly">
+                    <p id="leftParagraph" class="text-xl text-blue-700">Monthly</p>
+                </div>
+                <div id="switch">
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input class="sr-only peer" value="" onclick="toggleSwitch()" id="toggleSwitch" type="checkbox">
+                          <div class="peer ring-2 ring-gray-900 bg-[#113f67] rounded-full outline-none duration-300 after:duration-500 w-7 h-3  shadow-inner peer-checked:bg-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-gray-900  after:content-[''] after:rounded-full after:absolute after:outline-none after:h-5 after:w-5 after:bg-gray-50 after:-top-2 after:-left-2 after:flex after:justify-center after:items-center after:border-4 after:border-gray-900  peer-checked:after:translate-x-5">
+                        </div>
+                      </label>
+                </div>
+                <div id="yearly">
+                    <p id="rightParagraph">Yearly</p>
+                </div>
+             </div>
+             <div id="link-button" class="md:flex flex-row items-center justify-between hidden gap-60">
+                <a href="./index.html">Go Back</a>
+                <button class="w-24 h-10 bg-slate-900 text-white rounded-xl  hover:bg-sky-700 ">
+                    <a href="./thirdPage.html">Next Step</a>
+                </button>
+             </div>
+        </div>
+        <div id="link-button" class="md:hidden pt-96 mt-40 flex-row items-center justify-between flex gap-24 md:gap-44 pl-10 md:pl-0 pb-6">
+            <a href="./index.html">Go Back</a>
+            <button class="w-36 h-12 bg-slate-900 hover:bg-sky-700 text-white rounded-xl ">
+                <a href="./thirdPage.html">Next Step</a>
+            </button>
+         </div>
+    </div>
+    <script src="../secondpage.js"></script>
+</body>
+</html>
